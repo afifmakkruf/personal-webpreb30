@@ -134,7 +134,6 @@ app.get('/blog-detail/:id', (req, res, done) => {
 
             let blog = result.rows[0]
 
-            console.log(blog);
 
             res.render('blog-detail', {
                 dataBlogs: blog,
@@ -254,6 +253,7 @@ app.get('/edit-blog/:id', (req, res) => {
             res.render('edit-blog', {
                 title: data.title,
                 content: data.content,
+                image: data.image,
                 id : id,
                 activeBlog: active,
                 isLogin: req.session.isLogin,
@@ -268,8 +268,15 @@ app.get('/edit-blog/:id', (req, res) => {
 
 app.post('/edit-blog/:id', upload.single('inputImage'), (req, res) => {
     let { id } = req.params
-    let { title, content } = req.body
+    let { title, content, oldImage } = req.body
     let image = req.file.filename
+    
+    console.log(oldImage);
+
+    if(typeof req.file.filename === 'undefined') {
+        image = oldImage
+    }
+
 
     let query = `UPDATE tb_blog 
     SET title='${title}', content='${content}', image='${image}' WHERE id = ${id}`
