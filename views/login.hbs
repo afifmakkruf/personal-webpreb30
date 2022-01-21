@@ -1,0 +1,34 @@
+{{>header}}
+{{>navbar}}
+
+    {{!-- message --}}
+    {{#if messages.danger}}
+    <div class="alert alert-danger" role="alert">
+      {{messages.danger}}
+    </div>
+    {{/if}}
+
+    <div class="container-fluid p-3 mb-5 d-flex flex-column align-items-center justify-content-center">
+        <div class="container-form">
+            <p class="h2 text-center mb-5 text-dark">Login</p>
+
+            <form action="/login" method="POST">
+                
+                <div class="mb-3">
+                  <label for="email" class="form-label text-dark">Email</label>
+                  <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label text-dark">Password</label>
+                  <input type="password" class="form-control" id="password" name="password">
+                </div>
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <button class="btn btn-primary bg-orange" type="submit">Submit</button>
+                </div>
+              </form>
+        </div>
+
+    </div>
+
+{{>footer}}

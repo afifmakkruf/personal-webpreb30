@@ -1,0 +1,53 @@
+{{>header}}
+{{>navbar}}
+
+    {{#if messages.success}}
+    <div class="alert alert-success" role="alert">
+      {{messages.success}}
+    </div>
+    {{/if}}
+
+    <div class="blog">
+    <div id="contents" class="blog-list">
+      {{#if isLogin}}
+      <div class="btn-add-new">
+         <a href="/add-blog"><span class="material-icons">add
+        </span>Add New</a>
+      </div>
+      {{/if}} 
+            <!-- dynamic content would be here -->
+            {{#each blogs}}
+            <div class="blog-list-item">
+              <div class="blog-image">
+                <img src="/uploads/{{this.image}}" alt="" />
+              </div>
+              <div class="blog-content">
+               {{#if isLogin}}
+                <div class="btn-group">
+                  <a class="btn-delete" href="/delete-blog-post/{{this.id}}">
+                  <span class="material-icons">delete</span>Delete Post
+                  </a>
+                  <a class="btn-edit" href="/edit-blog/{{this.id}}">
+                  <span class="material-icons">edit</span>Edit Blog</a>
+                </div>
+                {{/if}}
+                <h1>
+                  <a href="/blog-detail/{{this.id}}" target="_blank"
+                    >{{this.title}}</a>
+                </h1>
+                <div class="detail-blog-content">
+                  {{this.fulltime}} | {{this.author}}
+                </div>
+                <p>
+                  {{this.content}}
+                </p>
+                <div class="distance-time">
+                  <span style="font-size: 14px; color: grey;">{{this.distance}}</span>
+                </div>
+              </div>
+            </div>
+            {{/each}}
+    </div>
+    </div>
+
+{{>footer}}

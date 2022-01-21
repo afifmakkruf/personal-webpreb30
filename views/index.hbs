@@ -1,0 +1,96 @@
+{{>header}}
+{{>navbar}}
+
+     {{#if messages.success}}
+    <div class="alert alert-success" role="alert">
+      {{messages.success}}
+    </div>
+    {{/if}}
+
+     <div class="container">
+            <div class="section">
+                <div class="left">
+                    <div class="card" style="
+                        width: 350px;
+                        text-align: left;
+                        padding: 35px 25px;
+                        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);    
+                        background-color: white;
+                        border-radius: 10px;
+                        ">
+                        <img src="/public/assets/photome.jpg" style="width: 100%; border-radius: 10px;">
+                            <h1>Muhammad Afif Ma'ruf</h1>
+                            <p style="color: grey; margin-top: 0;">Culpa est mollit fugiat elit enim. Eu duis eiusmod amet ipsum ut irure quis ex velit enim consectetur pariatur. Amet dolore quis excepteur ullamco officia dolore. 
+                            </p>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 5px;">  
+                                <tr style="background-color: #ee993e; text-align: center; color: white">
+                                    <th>Experience</th> 
+                                    <th>Year</th>
+                                </tr>
+                                {{#each dataExp}}
+                                <tr>
+                                    <td>{{this.experience}}</td>
+                                    <td>{{this.year}}</td>
+                                </tr>
+                                {{/each}}
+                            </table>
+                            <div>
+                                <h2 style="margin-bottom: 10px; margin-top: 20px; font-size: 24px;">Skills</h2>
+                                <div class="skills-badge">
+                                    <span>HTML</span>
+                                    <span>CSS</span>
+                                    <span>JavaScripts</span>
+                                    <span>Node.js</span>
+                                    <span>Express.js</span>
+                                    <span>React</span>
+                                    <span>MySQL</span>
+                                    <span>Git</span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="right">
+                    <h2 style="font-size: 32px; margin: 0 0 5px;">What I Do ?</h2>
+                    <p>Dolor eiusmod nulla Lorem esse aliqua pariatur nisi eu. Elit occaecat sint commodo velit minim in irure labore. Eu nulla adipisicing reprehenderit magna reprehenderit nulla eu labore sint nulla proident cillum. Consectetur amet ad aliqua nisi ea proident minim tempor Lorem labore ad esse nisi anim.
+                    Ipsum pariatur nostrud id cupidatat. Laboris culpa nostrud duis cupidatat aute incididunt occaecat consequat aute adipisicing consectetur ex. Esse labore do incididunt do proident commodo sit veniam id.
+                    </p>
+                    
+                    <div class="skill-section">
+                        <div>
+                            <img src="/public/assets/js.png" alt="js.png">
+                            <h3 style="margin: 10px 0">Frontend Developer</h3>
+                            <p>Non excepteur voluptate ipsum minim culpa. Ea ut 
+                            cupidatat veniam do laborum aute proident mollit. 
+                            Dolore incididunt ut nostrud qui mollit deserunt. 
+                            </p>
+                        </div>
+                        <div>
+                            <img src="/public/assets/git.png" alt="git.png">
+                            <h3 style="margin: 10px 0">Version Control</h3>
+                            <p>Non excepteur voluptate ipsum minim culpa. Ea ut 
+                                cupidatat veniam do laborum aute proident mollit. 
+                                Dolore incididunt ut nostrud qui mollit deserunt. 
+                            </p>
+                        </div>
+                        <div>
+                            <img src="/public/assets/automated_deployment.png" alt="ad.png">
+                            <h3 style="margin: 10px 0">Automated Deployment</h3>
+                            <p>Non excepteur voluptate ipsum minim culpa. Ea ut 
+                                cupidatat veniam do laborum aute proident mollit. 
+                                Dolore incididunt ut nostrud qui mollit deserunt. 
+                            </p>
+                        </div>
+                    </div>
+                    <h2 class="contact">Follow me on</h2>
+                    <div class="follow-me">
+                        <div class="icon"><a href="https://facebook.com"><img src="/public/assets/fb2.svg" alt="fb2.svg"></a></div>
+                        <div class="icon"><a href="https://instagram.com"><img src="/public/assets/instagram.svg" alt="ig.svg"></a></div>
+                        <div class="icon"><a href="https://twitter.com"><img src="/public/assets/twitter.svg" alt="twitter.svg"></a></div>
+                        <div class="icon"><a href="https://youtube.com"><img src="/public/assets/youtube.svg" alt="yt.svg"></a></div>
+                        <div class="icon"><a href="https://github.com"><img src="/public/assets/github.svg" alt="github.svg"></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{{>footer}}

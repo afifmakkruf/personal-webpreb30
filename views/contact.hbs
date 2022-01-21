@@ -1,0 +1,75 @@
+{{>header}} 
+{{>navbar}}
+
+     <div class="container">
+            <div class="section">
+                <form id="contact" class="contact" style="margin: 0 auto; width: 500px">
+                   <p class="h2 text-center mb-5 text-dark">Contact Form</p>
+                    <div class="mb-3">
+                        <label for="name" class="form-label text-dark">Name *</label>
+                        <input type="text" class="form-control" id="name" name="title">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-dark">Email *</label>
+                        <input type="email" class="form-control" id="email" name="title">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label text-dark">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="title">
+                    </div>
+
+                    <div>
+                        <label for="subject">Subject *</label>
+                        <select id="subject"
+                        style="
+                        font-weight: 400;
+                        background-color: #f3f3f3; 
+                        width: 100%;
+                        border-radius: 5px;
+                        padding: 10px;
+                        margin: 5px 0 20px;
+                        
+                        box-sizing: border-box;
+                        
+                        ">
+                            <option value = "" >Select Here</option>
+                            <option>I'm Hiring</option>
+                            <option>Probelm with our site</option>
+                            <option>Question on Order</option>
+                            <option>Other Question</option>
+                        </select>
+                        <div class="error"></div>
+                    </div>
+                    
+                   <div class="mb-3">
+                        <label for="message" class="form-label text-dark">Message *</label>
+                        <textarea class="form-control" id="message" rows="4" name="content"></textarea>
+                    </div>
+
+                    <div class="checkbox-input mb-5">
+                        <div style="margin-bottom: 5px">Choose the required skill ?</div>
+                        <div class="item">
+                            <input type="checkbox" id="html" value="HTML" name="skills">
+                            <label for="html">HTML</label>
+                        </div>
+                        <div class="item">
+                            <input type="checkbox" id="css" value="CSS" name="skills">
+                            <label for="css">CSS</label>
+                        </div>  
+                        <div class="item">
+                            <input type="checkbox" id="js" value="JavaScript" name="skills">
+                            <label for="js">JavaScript</label>
+                        </div> 
+                        <div class="error"></div> 
+                    </div>
+
+                    <div>
+                    <button type="submit" onclick="submitData()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+{{>footer}}

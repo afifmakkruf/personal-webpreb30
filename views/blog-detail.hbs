@@ -1,0 +1,16 @@
+{{>header}}
+{{>navbar}}
+
+    <!-- Blog -->
+    <div class="blog-detail">
+      <div class="blog-detail-container">
+        <h1>{{dataBlogs.title}}</h1>
+        <div class="author">{{fulltime}} | {{dataBlogs.author}}</div>
+        <img src="/uploads/{{dataBlogs.image}}" alt="detail" />
+        <p>
+          {{dataBlogs.content}}
+        </p>
+      </div>
+    </div>
+
+ {{>footer}}
