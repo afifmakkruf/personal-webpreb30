@@ -100,31 +100,31 @@ function getDistanceTime(time) {
 
 app.get('/', (req, res) => {
 
-    // db.connect((error, client, done) => {
-    //     if (error) throw error
+    db.connect((error, client, done) => {
+        if (error) throw error
 
-    //     client.query('SELECT experience, EXTRACT (YEAR FROM year) AS YEAR FROM tb_experiences', (error, result) => {
-    //         if (error) throw error
+        client.query('SELECT experience, EXTRACT (YEAR FROM year) AS YEAR FROM tb_experiences', (error, result) => {
+            if (error) throw error
 
-    //         let dataExp = result.rows
+            let dataExp = result.rows
 
-    //         res.render('index', {
-    //             dataExp,
-    //             activeHome: active,
-    //             isLogin: req.session.isLogin,
-    //             user: req.session.user
-    //         })
-    //     })
-
-    //     done()
-    // })
-
-    res.render('index', {
-            // dataExp,
-            activeHome: active,
-            isLogin: req.session.isLogin,
-            user: req.session.user
+            res.render('index', {
+                dataExp,
+                activeHome: active,
+                isLogin: req.session.isLogin,
+                user: req.session.user
+            })
         })
+
+        done()
+    })
+
+    // res.render('index', {
+    //         // dataExp,
+    //         activeHome: active,
+    //         isLogin: req.session.isLogin,
+    //         user: req.session.user
+    //     })
 })
 
 app.get('/blog-detail/:id', (req, res, done) => {
