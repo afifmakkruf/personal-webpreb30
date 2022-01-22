@@ -216,7 +216,7 @@ app.get('/blog', (req, res) => {
         if (error) throw error
 
         let query = `SELECT tb_blog.id, tb_blog.author_id, tb_blog.title, tb_blog.image, tb_blog.content, tb_blog.post_date, tb_user.name AS author
-        FROM tb_blog LEFT JOIN tb_user ON tb_blog.author_id = tb_user.id;`
+        FROM tb_blog LEFT JOIN tb_user ON tb_blog.author_id = tb_user.id ORDER BY tb_blog.post_date ASC;`
         client.query(query, (error, result) => {
             if (error) throw error
             let blog = result.rows
